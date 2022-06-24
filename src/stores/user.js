@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import axios from "axios";
+import { getAllUsers } from "@/services/userServices";
 
 export const useUserStore = defineStore("user",{
     state: () => ({
@@ -13,7 +13,7 @@ export const useUserStore = defineStore("user",{
     actions: {
         async fetchUsers() {
             try {
-                const data = await axios.get('https://jsonplaceholder.typicode.com/users');
+                const data = await getAllUsers();
                 this.users = data.data;
             } catch (error) {
                 alert(error);

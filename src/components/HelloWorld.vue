@@ -28,5 +28,3 @@ onMounted(() => {
   store.fetchUsers();
 });
 </script>
-
-<style lang="scss" scoped></style>
